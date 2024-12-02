@@ -4,8 +4,8 @@ import {
   IonInput,
   ItemReorderEventDetail,
 } from '@ionic/angular';
-import { TaskServiceService } from '../task-service.service';
-import { Task } from '../task-service.service';
+import { TaskServiceService } from '../services/task-service.service';
+import { Task } from '../services/task-service.service';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -28,7 +28,7 @@ export class ToDoPage implements OnInit {
     this.taskService
       .createTask(title)
       .catch((error) => console.error('Error adding task:', error));
-      this.taskTitle = '';
+    this.taskTitle = '';
   }
   ngOnInit(): void {
     this.taskService.getTasks().subscribe((tasks) => {
