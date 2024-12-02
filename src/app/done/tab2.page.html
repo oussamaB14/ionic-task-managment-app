@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Done </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Done</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card *ngFor="let task of doneTasks">
+    <ion-card-header>
+      <ion-row style="margin-top: 8px; margin-bottom: 8px"
+        ><ion-checkbox
+          disabled="true"
+          checked="true"
+          style="margin-right: 16px; color: #808080"
+          color="medium"
+        ></ion-checkbox>
+        <ion-card-title>{{ task.title }}</ion-card-title>
+      </ion-row>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
